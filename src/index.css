@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CodeCrack — LeetCode-inspired design system. All colors HSL. */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 36 100% 50%;          /* CodeCrack orange */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 28 100% 60%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 94%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 38%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --difficulty-easy: 142 71% 38%;
+    --difficulty-medium: 38 92% 50%;
+    --difficulty-hard: 0 84% 60%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 36 100% 50%;
+
+    --radius: 0.5rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --shadow-glow: 0 8px 32px -8px hsl(var(--primary) / 0.4);
+    --shadow-card: 0 1px 3px hsl(222 47% 11% / 0.06), 0 1px 2px hsl(222 47% 11% / 0.04);
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 36 100% 55%;
+    --primary-foreground: 222 47% 8%;
+    --primary-glow: 28 100% 65%;
+
+    --secondary: 222 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 222 32% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 222 47% 8%;
+
+    --difficulty-easy: 142 70% 45%;
+    --difficulty-medium: 38 92% 55%;
+    --difficulty-hard: 0 72% 60%;
+
+    --border: 222 32% 20%;
+    --input: 222 32% 20%;
+    --ring: 36 100% 55%;
+
+    --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .gradient-primary { background: var(--gradient-primary); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
